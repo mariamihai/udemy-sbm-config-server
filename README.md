@@ -29,3 +29,11 @@ To verify the available properties use Postman with http://localhost:8888/applic
     ]
 }
 ```
+
+## Beer-service
+### Get the properties not attached to a profile
+http://localhost:8888/beer-service/default
+
+### Get the properties for the local profile, and the properties not attached to a profile
+http://localhost:8888/beer-service/local
+

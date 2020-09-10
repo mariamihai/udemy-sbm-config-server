@@ -7,11 +7,13 @@ Spring Boot Microservice project.
   - [Docker images](#docker-images)
   - [Implementation details](#implementation-details)
     - [Properties](#properties)
-    - [API calls](#api-calls)
-      - [Verify available properties](#verify-available-properties)
-      - [Get the properties not attached to a profile](#get-the-properties-not-attached-to-a-profile)
-      - [Get the properties for the local profile, and the properties not attached to a profile](#get-the-properties-for-the-local-profile-and-the-properties-not-attached-to-a-profile)
-
+    - [Security](#security)
+    - [Profiles](#profiles)
+  - [API calls](#api-calls)
+    - [Verify available properties](#verify-available-properties)
+    - [Get the properties not attached to a profile](#get-the-properties-not-attached-to-a-profile)
+    - [Get the properties for the local profile, and the properties not attached to a profile](#get-the-properties-for-the-local-profile-and-the-properties-not-attached-to-a-profile)
+    
 ## Description
 The current project is part of the "Spring Boot Microservices with Spring Cloud" [Udemy course](https://www.udemy.com/course/spring-boot-microservices-with-spring-cloud-beginner-to-guru/). 
 
@@ -40,18 +42,29 @@ spring.application.name=sfg-brewery-config
 server.port=8888
 ```
 
-### API calls
-#### Verify available properties
+### Security
+I am using Basic Auth to secure the current project. For better implementations of securing an application, check 
+[this](https://github.com/mariamihai/spring-security-amigoscode-tutorial) project.
+```
+spring.cloud.config.username=MyUserName
+spring.cloud.config.password=MyPassword
+```
+
+### Profiles
+There is no active profile defined for the current project.
+
+## API calls
+### Verify available properties
  * __URI:__ _/application/profile_
 
  * __Method:__ _GET_
 
-#### Get the properties not attached to a profile
+### Get the properties not attached to a profile
  * __URI:__ _/beer-service/default_
 
  * __Method:__ _GET_
     
-#### Get the properties for the local profile, and the properties not attached to a profile
+### Get the properties for the local profile, and the properties not attached to a profile
  * __URI:__ _/beer-service/local_
 
  * __Method:__ _GET_
